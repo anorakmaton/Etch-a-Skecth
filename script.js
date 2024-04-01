@@ -37,7 +37,14 @@ function generateDiv(sideConunt) {
         div.setAttribute("style", `border: 1px solid rgb(121, 114, 114); height: ${sideLength}px; width: ${sideLength}px;`)
         div.addEventListener("mouseover", (evt) => {
             console.log(typeof evt.target);
-            evt.target.classList.toggle("hover");
+            if (!evt.target.style.opacity) {
+                evt.target.style.opacity = '0.9'
+            }
+            else {
+                let opacityNum = Number(evt.target.style.opacity);
+                if(opacityNum > 0) opacityNum -= 0.1;
+                evt.target.style.opacity = String(opacityNum);
+            }
         })
         container.appendChild(div);
     }
