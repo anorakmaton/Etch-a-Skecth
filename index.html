@@ -6,15 +6,34 @@
     <title>Document</title>
     <script src="script.js" defer></script>
     <style>
+        .glid-container {
+            display: flex;
+            justify-content: center;
+        }
         .container {
             display: flex;
+            background-color: aqua;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
         }
         .container div {
-            border: solid;
+            background: peachpuff;
+            border: 1px solid rgb(121, 114, 114);
+            height: 33px;
+            width: 33px;
+        }
+        .container div.hover {
+            background: black;
         }
     </style>
 </head>
 <body>
-    <div class="container"></div>
+    <button id="reset-button">Reset</button>
+    <div class="glid-container">    
+        <div class="container">
+        </div>
+    </div>
 </body>
 </html>
